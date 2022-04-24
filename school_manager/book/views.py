@@ -3,8 +3,17 @@ from django.views import View
 
 from .models import Book
 
+MAIN_TEMPLATE_DIR = 'book'
+
 def index(request) :
-    template_name = 'book/index.html'
+    """Main page of book app,
+
+    :context
+        :books [has all books from database]
+    :return
+        :render 'book/index.html
+    """
+    template_name = f'{MAIN_TEMPLATE_DIR}/index.html'
     books = Book.objects.all()
     
     context = {

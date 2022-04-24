@@ -9,9 +9,7 @@
 </head>
 <body>
 
-
     <div class="container-lg">    
-        {% for class in classes %}
         <div class="container-sm">
             class name: {{class.name}}
             <br>
@@ -19,10 +17,25 @@
             <br>
             book name: {{class.book.name}}
         </div>
-        <a href="{% url 'class:detail' class.id %}">class detail</a>
         <hr>
-        {% endfor %}
     </div>
+
+
+    <hr>
+    <h3>Students :</h3>
+
+    <div class="container-sm">
+
+        <ul class="list-group">
+            {% for student in students %}
+                <li class="list-group-item list-group-item-secondary">{{student.name}}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <hr>
+    <a href="{% url 'class:index' %}">classes page</a>
 
     <hr>
     <a href="{% url 'dashboard:index' %}">dashboard</a>

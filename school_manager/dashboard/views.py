@@ -1,14 +1,10 @@
+from django.shortcuts import render
+
 from django.shortcuts import render, HttpResponse
 from django.views import View
 
-from .models import Class
-
 def index(request) :
-    template_name = 'class/index.html'
-    classes = Class.objects.all()
+    template_name = 'dashboard/index.html'
+    context = {}
     
-    context = {
-        'classes': classes,
-    }
-
     return render(request, template_name, context)

@@ -35,7 +35,7 @@ def detail(request, student_id) :
     """
     template_name = f'{MAIN_TEMPLATE_DIR}/detail.html'
     student = Student.objects.get(id=student_id)
-    classes = student.classes.all()
+    classes = student.class_set.all()
 
     context = {
         'student': student,

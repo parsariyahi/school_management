@@ -17,8 +17,8 @@ you can manage your teachers, students, classes, etc.
 ## TODO
 - [X] create each routes templates.
 - [X] create views for each app.
-- [ ] add teachers app. (0)
-- [ ] add some data to database. (1)
+- [X] add teachers app. (0)
+- [X] add some data to database. (1)
 - [ ] add forms for creating new student, class, book, etc. and their views. (2)
 - [ ] add user authentication. (3)
 - [ ] add user permission. (4)

@@ -34,7 +34,7 @@ def detail(request, class_id) :
     """
     template_name = f'{MAIN_TEMPLATE_DIR}/detail.html'
     class_ = Class.objects.get(id=class_id) # use '_' after 'class' because 'class' is a keyword
-    students = class_.student_set.all()
+    students = class_.students.all()
 
     context = {
         'class': class_,

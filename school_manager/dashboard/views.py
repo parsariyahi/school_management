@@ -31,13 +31,14 @@ def test(request) :
     teachers = []
     classes = []
 
-    for _ in range(10):
+    for _ in range(50):
         student = {
             'national_id': faker.random_int(10000000, 99999999),
             'name': faker.first_name(),
             'last_name': faker.last_name(),
             'phone_number': '09' + str(faker.random_int(1000000000, 9999999999)),
         }
+        s = Student.
         students.append(student)
 
         teacher = {

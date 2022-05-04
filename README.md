@@ -25,4 +25,4 @@ you can manage your teachers, students, classes, etc.
 
 
 
-## though its not complete (yet)
+## though its not complete (yet) i'm working on it

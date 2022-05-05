@@ -32,11 +32,14 @@
 
     <div class="container-sm">
 
-        <ul class="list-group">
-            {% for student in students %}
-                <li class="list-group-item list-group-item-secondary">{{student.name}}</li>
-            {% endfor %}
-        </ul>
+        {% for student in students %}
+            <ul class="list-group">
+                    <li class="list-group-item list-group-item-secondary">{{student.name}}</li>
+                    <li class="list-group-item list-group-item-secondary"><a href="{% url 'student:detail' student.id %}">detail</a></li>
+            </ul>
+            <br>
+            <br>
+        {% endfor %}
 
     </div>
 

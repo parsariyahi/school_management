@@ -33,11 +33,16 @@
 
     <div class="container-sm">
 
+
+        {% for class in classes %}
         <ul class="list-group">
-            {% for class in classes %}
-                <li class="list-group-item list-group-item-secondary">name: {{class.name}} ----- teacher: {{class.teacher.email}} ----- class book: {{class.book.name}}</li>
-            {% endfor %}
+                <li class="list-group-item list-group-item-secondary">name: {{class.name}} ---- <a href="{% url 'class:detail' class.id %}">detail</a></li>
+                <li class="list-group-item list-group-item-secondary">teacher: {{class.teacher.email}} ---- <a href="{% url 'teacher:detail' class.teacher.id %}">detail</a></li>
+                <li class="list-group-item list-group-item-secondary">book: {{class.book.name}}</li>
         </ul>
+        <br>
+        <br>
+        {% endfor %}
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

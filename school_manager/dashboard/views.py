@@ -1,17 +1,17 @@
 from django.shortcuts import render
-
-from django.shortcuts import HttpResponse
 from django.http import JsonResponse
-from django.views import View
 
+"""Uncomment these lines,
 
-from faker import Faker
-from random import randint, choice, choices
-from datetime import time
-from classes.models import Class
-from student.models import Student
-from teacher.models import Teacher
-from book.models import Book
+if you want to use fake data views
+"""
+# from faker import Faker
+# from random import randint, choice, choices
+# from datetime import time
+# from classes.models import Class
+# from student.models import Student
+# from teacher.models import Teacher
+# from book.models import Book
 
 
 def index(request) :
@@ -20,20 +20,13 @@ def index(request) :
     
     return render(request, template_name, context)
 
-def test(request) :
-    """Uncomment these lines for fake data """
-    # faker = Faker()
 
-    # Fake Students
-    # for _ in range(50):
-    #     student = {
-    #         'national_id': faker.random_int(10000000, 99999999),
-    #         'name': faker.first_name(),
-    #         'last_name': faker.last_name(),
-    #         'phone_number': '09' + str(faker.random_int(1000000000, 9999999999)),
-    #     }
-    #     s = Student(**student)
-    #     s.save()
+def fake_teachers(request) :
+    """Uncomment these lines,
+
+    if you want to use fake data views
+    """
+    # faker = Faker()
 
     # Fake Teachers
     # for _ in range(10) :
@@ -47,14 +40,33 @@ def test(request) :
     #     }
     #     t = Teacher(**teacher)
     #     t.save()
+    return JsonResponse({'status': 'true'})
 
-    # Fake Books
-    # for _ in range(20) :
-    #     book = {
-    #         'name': ' '.join(faker.words(4)),
+def fake_students(request) :
+    """Uncomment these lines,
+
+    if you want to use fake data views
+    """
+    # faker = Faker()
+
+    # Fake Students
+    # for _ in range(50):
+    #     student = {
+    #         'national_id': faker.random_int(10000000, 99999999),
+    #         'name': faker.first_name(),
+    #         'last_name': faker.last_name(),
+    #         'phone_number': '09' + str(faker.random_int(1000000000, 9999999999)),
     #     }
-    #     b = Book(**book)
-    #     b.save()
+    #     s = Student(**student)
+    #     s.save()
+    return JsonResponse({'status': 'true'})
+
+def fake_classes(request) :
+    """Uncomment these lines,
+
+    if you want to use fake data views
+    """
+    # faker = Faker()
 
     # Fake Classes
     # books = Book.objects.all()
@@ -81,5 +93,20 @@ def test(request) :
     #     e = randint(11, 30)
     #     students = Student.objects.all()[s:e]
     #     c.students.set(students)
+    return JsonResponse({'status': 'true'})
 
-    return JsonResponse({'fakers': 'Done'})
+def fake_books(request) :
+    """Uncomment these lines,
+
+    if you want to use fake data views
+    """
+    # faker = Faker()
+
+    # Fake Books
+    # for _ in range(20) :
+    #     book = {
+    #         'name': ' '.join(faker.words(4)),
+    #     }
+    #     b = Book(**book)
+    #     b.save()
+    return JsonResponse({'status': 'true'})

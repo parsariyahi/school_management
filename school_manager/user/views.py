@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.contrib.auth import logout
+
 
 MAIN_TEMPLATE_DIR='user'
 
@@ -9,7 +11,10 @@ def index(request) :
     
     return render(request, template_name, context)
 
-
+def logout_view(request) :
+    logout(request)
+    return redirect('dashboard:index')
+    
 def student_login(request):
     template_name = f'{MAIN_TEMPLATE_DIR}/student_login.html'
     context = {}

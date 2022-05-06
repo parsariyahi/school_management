@@ -13,14 +13,40 @@ if you want to use fake data views
 # from teacher.models import Teacher
 # from book.models import Book
 
+MAIN_TEMPLATE_DIR='dashboard'
 
 def index(request) :
-    template_name = 'dashboard/index.html'
+    template_name = f'{MAIN_TEMPLATE_DIR}/index.html'
     context = {}
     
     return render(request, template_name, context)
 
 
+def student_login(request):
+    template_name = f'{MAIN_TEMPLATE_DIR}/user_login_register/student_login.html'
+    context = {}
+    
+    return render(request, template_name, context)
+
+def student_register(request):
+    template_name = f'{MAIN_TEMPLATE_DIR}/user_login_register/student_register.html'
+    context = {}
+    
+    return render(request, template_name, context)
+
+def teacher_login(request):
+    template_name = f'{MAIN_TEMPLATE_DIR}/user_login_register/teacher_login.html'
+    context = {}
+    
+    return render(request, template_name, context)
+
+def teacher_register(request):
+    template_name = f'{MAIN_TEMPLATE_DIR}/user_login_register/teacher_register.html'
+    context = {}
+    
+    return render(request, template_name, context)
+
+"""----------------------------------------------------------"""
 def fake_teachers(request) :
     """Uncomment these lines,
 

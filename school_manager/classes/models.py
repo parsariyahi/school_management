@@ -32,4 +32,7 @@ class Class(models.Model):
         Teacher, 
         on_delete=models.CASCADE
     )
-    students = models.ManyToManyField(Student)
+    students = models.ManyToManyField(
+        Student,
+        related_name='class_students',
+    )

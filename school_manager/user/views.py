@@ -1,11 +1,20 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse # just for testing
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import (
+    authenticate, login, logout
+)
 
 from .forms import (
     StudentRegisterForm, 
     TeacherRegisterForm,
 )
+
+from .decorators import (
+    teacher_required,
+    student_required,
+)
+
 
 
 MAIN_TEMPLATE_DIR='user'

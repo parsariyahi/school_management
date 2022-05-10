@@ -5,7 +5,7 @@ class User(AbstractUser):
     USER_TYPE = (
         (1, 'student'),
         (2, 'teacher'),
-        (3, 'admin'),
+        (3, 'school_staff'),
     )
 
     national_id = models.CharField(

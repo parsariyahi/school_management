@@ -24,5 +24,4 @@ you can manage your teachers, students, classes, etc.
 - [X] add user permission. (4)
 
 
-
 ## though its not complete (yet) i'm working on it
